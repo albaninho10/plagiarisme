@@ -16,9 +16,11 @@ const newDetect = asyncHandler(async (req, res) => {
     var longerLength = longer.length;
     if (longerLength == 0) {
         result = 1.0;
+        console.log(result);
         res.status(200).json(result)
     }
     result = (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
+    console.log(result);
     res.status(200).json(result)
 })
 
